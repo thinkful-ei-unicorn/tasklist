@@ -20,9 +20,16 @@ class TaskList extends Component {
     };
 
     render() {
+        const tasks = this.state.tasks.map(task =>
+            <Task
+                key={task.id} id={task.id}
+                text={task.text} complete={task.complete}
+                handleClick={this.completeTask} /> // Callback prop!
+        );
+
         return(
            <>
-            
+            {tasks}
            </>
         )
     }

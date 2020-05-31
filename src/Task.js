@@ -6,6 +6,7 @@ function Task(props) {
             className="task"
             onClick={() => {
                 // How do I call completeTask in <TaskList />?
+                props.handleClick(props.id)
             }}>
             {props.text}
         </div>
