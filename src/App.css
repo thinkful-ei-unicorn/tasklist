@@ -7,6 +7,12 @@
     flex-direction: column;
 }
 
+.App-header h1 {
+    margin: 0;
+    font-size: 20px;
+    padding: 0 14px 10px 0;
+}
+
 .App-list {
     display: flex;
     flex-direction: inherit;
