@@ -20,10 +20,17 @@ class TaskList extends Component {
     };
 
     render() {
+        const tasks = this.state.tasks.map(task =>
+            <Task
+                key={task.id} id={task.id}
+                text={task.text} complete={task.complete}
+                 /> 
+        );
         const completed = this.state.tasks.reduce((sum, task) => sum + task.complete, 0);
+
         return(
            <>
-            Task list goes here....<br/>
+            {tasks}
             Completed {completed} out of {this.state.tasks.length} tasks
            </>
         )
