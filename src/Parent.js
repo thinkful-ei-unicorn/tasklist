@@ -10,13 +10,16 @@ export default class Parent extends React.Component{
         console.log("toggleIsOpen called");
         
         this.setState({
-            isOpen: !this.setState.isOpen
+            isOpen: !this.state.isOpen
         });
     };
 
     render(){
         return(
-            <Child handleClick={this.toggleIsOpen} />
+            <div>
+                <Child handleClick={this.toggleIsOpen} />
+                {this.state.isOpen && <div>I'm showing</div>}
+            </div>
         )
     }
 }
