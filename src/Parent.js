@@ -1,27 +1,19 @@
 import React from 'react';
-import Child from './Child';
 
 export default class Parent extends React.Component{
-    state = {
-        isOpen: false
-    };
-
-    toggleIsOpen = () => {
-        console.log("toggleIsOpen called");
-        
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    };
+    onClick (){
+        console.log('Foo')
+    }
 
     render(){
         return(
-            <div>
-                <Child handleClick={this.toggleIsOpen} />
-                {this.state.isOpen && <div>I'm showing</div>}
-            </div>
+            <Child />
         )
     }
+}
+
+function Child(props){
+    return <button onClick={() => props.onClick()}>Click Me!</button>
 }
 
 
