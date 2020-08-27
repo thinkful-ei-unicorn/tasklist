@@ -17,6 +17,7 @@ class TaskList extends Component {
                 task => task.id === id ? {...task, complete: true} : task
             )
         });
+       // console.log('completTask triggered')
     };
 
     render() {
